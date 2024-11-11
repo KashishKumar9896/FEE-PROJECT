@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="website icon" type="png" href="ARCADIX-removebg-preview.png">
+</head>
+
+<body>
+  <!-- <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="settings.html">Settings</a></li>
+        <li class="profile">
+          <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+          <a href="profile.html" style="color: #66fcf1;">My Profile</a>
+        </li>
+      </ul>
+    </nav>
+  </header> -->
+
+  <div class="nav">
+    <div class="logo"><img src="logo.png" alt=""></div>
+    <div class="navbar">
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="26px"
+                fill="#e8eaed">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </li><li id="Home"class="active"><a href="#">Home</a></li>
+        <li><a href="#about1">About</a></li>
+        <li><a href="#discounts">Deals</a></li>
+        <li><a href="#countdown">Upcoming</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Social</a></li>
+        <li class="profile active">
+          <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+          <a href="profile.html">My Profile</a>
+        </li>
+    </ul>
+    <ul>
+        <li id="Home" class="hideOnMobile"><a href="../ok/index.html">Home</a></li>
+        <li class="hideOnMobile"><a href="../ok/index.html">About</a></li>
+        <li class="hideOnMobile"><a href="../ok/index.html">Deals</a></li>
+        <li class="hideOnMobile"><a href="../ok/index.html">News</a></li>
+        <li class="hideOnMobile"><a href="../ok/index.html">Contact</a></li>
+        <li class="hideOnMobile"><a href="../newlogin/index.html">Login</a></li>
+        <li class="hideOnMobile " ><a href="../arcadix-auth/main.html">Social</a></li>
+        <li class="profile active">
+          <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic " >
+          <a href="profile.html">My Profile</a>
+        </li>
+        <li class="menu-button" onclick="showSidebar()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#e8eaed">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+            </svg>
+        </li>
+    </ul>
+</div>
+</div>
+
+  <main class="profile-page">
+    <div class="profile-header">
+      <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic-large">
+      <h1>Hardik Tandon</h1>
+      <p>Gamer | Developer | Tech Enthusiast</p>
+      <div class="stats">
+        <div class="stat">
+          <h3>Posts</h3>
+          <p>120</p>
+        </div>
+        <div class="stat">
+          <h3>Followers</h3>
+          <p>3.5K</p>
+        </div>
+        <div class="stat">
+          <h3>Following</h3>
+          <p>380</p>
+        </div>
+      </div>
+    </div>
+    <div class="profile-details">
+      <section class="bio">
+        <h2>Bio</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel mauris quam. Phasellus in lacus at nunc
+          varius condimentum.</p>
+      </section>
+      <section class="friends">
+        <h2>Friends</h2>
+        <ul class="friends-list collapsed" id="friends-list">
+          <li><img src="friend1-profile-pic.jpg" alt="Friend 1" class="friend-profile-pic"> Ishit Singh</li>
+          <li><img src="friend2-profile-pic.jpg" alt="Friend 2" class="friend-profile-pic"> Divyam Jain</li>
+          <li><img src="friend3-profile-pic.jpg" alt="Friend 3" class="friend-profile-pic"> Kashish</li>
+          <li><img src="friend4-profile-pic.jpg" alt="Friend 4" class="friend-profile-pic"> Gursharan</li>
+          <li><img src="friend1-profile-pic.jpg" alt="Friend 5" class="friend-profile-pic"> Friend 5</li>
+        </ul>
+        <button id="view-more-friends" class="view-more">View More</button>
+        <button id="view-less-friends" class="view-less" style="display: none;">View Less</button>
+      </section>
+
+      <section class="posts">
+        <h2>Posts</h2>
+        <div class="posts-container collapsed" id="posts-container">
+          <div class="post"><img src="post1.jpg" alt="Post 1"></div>
+          <div class="post"><img src="post2.jpg" alt="Post 2"></div>
+          <div class="post"><img src="post3.jpg" alt="Post 3"></div>
+        </div>
+        <button id="view-more-posts" class="view-more">View More</button>
+        <button id="view-less-posts" class="view-less" style="display: none;">View Less</button>
+      </section>
+    </div>
+  </main>
+  <script>
+    // Data for Friends
+    const allFriends = [
+      '<li><img src="friend1-profile-pic.jpg" alt="Friend 6" class="friend-profile-pic"> Friend 6</li>',
+      '<li><img src="friend1-profile-pic.jpg" alt="Friend 7" class="friend-profile-pic"> Friend 7</li>',
+      '<li><img src="friend1-profile-pic.jpg" alt="Friend 8" class="friend-profile-pic"> Friend 8</li>',
+      '<li><img src="friend1-profile-pic.jpg" alt="Friend 9" class="friend-profile-pic"> Friend 9</li>',
+      '<li><img src="friend1-profile-pic.jpg" alt="Friend 10" class="friend-profile-pic"> Friend 10</li>',
+      // Add more friends as needed
+    ];
+
+    // Data for Posts
+    const allPosts = [
+      '<div class="post"><img src="post4.jpg" alt="Post 4"></div>',
+      '<div class="post"><img src="post5.jpg" alt="Post 5"></div>',
+      '<div class="post"><img src="post6.jpg" alt="Post 6"></div>',
+      '<div class="post"><img src="post7.jpg" alt="Post 7"></div>',
+      '<div class="post"><img src="post8.jpg" alt="Post 8"></div>',
+      // Add more posts as needed
+    ];
+
+    // Lazy Loading for Friends
+    document.getElementById('view-more-friends').addEventListener('click', function () {
+      const friendsList = document.getElementById('friends-list');
+      allFriends.forEach(friend => {
+        friendsList.insertAdjacentHTML('beforeend', friend);
+      });
+      friendsList.classList.add('expanded');
+      friendsList.classList.remove('collapsed', 'hidden');
+      this.style.display = 'none';
+      document.getElementById('view-less-friends').style.display = 'block';
+    });
+
+    // Lazy Loading for Posts
+    document.getElementById('view-more-posts').addEventListener('click', function () {
+      const postsContainer = document.getElementById('posts-container');
+      allPosts.forEach(post => {
+        postsContainer.insertAdjacentHTML('beforeend', post);
+      });
+      postsContainer.classList.add('expanded');
+      postsContainer.classList.remove('collapsed', 'hidden');
+      this.style.display = 'none';
+      document.getElementById('view-less-posts').style.display = 'block';
+    });
+
+    // Hide Extra Friends and Posts
+    document.getElementById('view-less-friends').addEventListener('click', function () {
+      const friendsList = document.getElementById('friends-list');
+      while (friendsList.children.length > 5) {
+        friendsList.removeChild(friendsList.lastChild);
+      }
+      friendsList.classList.add('collapsed');
+      friendsList.classList.remove('expanded');
+      this.style.display = 'none';
+      document.getElementById('view-more-friends').style.display = 'block';
+    });
+
+    document.getElementById('view-less-posts').addEventListener('click', function () {
+      const postsContainer = document.getElementById('posts-container');
+      while (postsContainer.children.length > 3) {
+        postsContainer.removeChild(postsContainer.lastChild);
+      }
+      postsContainer.classList.add('collapsed');
+      postsContainer.classList.remove('expanded');
+      this.style.display = 'none';
+      document.getElementById('view-more-posts').style.display = 'block';
+    });
+  </script>
+</body>
+
+</html>

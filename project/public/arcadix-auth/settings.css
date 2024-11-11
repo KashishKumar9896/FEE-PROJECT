@@ -1,0 +1,121 @@
+body {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  background-color: rgb(6, 20, 29, 255);
+  color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgb(6, 20, 29, 255);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  height: 30px;
+  margin-right: 8px;
+}
+
+nav ul li a:hover {
+  color: #45a29e;
+}
+
+  .settings-page {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #66fcf1;
+    margin-bottom: 20px;
+  }
+  
+  .settings-section {
+    background-color: #0d1b24;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }
+  
+  .settings-section h2 {
+    color: #66fcf1;
+    margin-top: 0;
+  }
+  
+  .settings-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .settings-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .settings-section ul li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    background-color: #0d1b24;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .settings-section ul li a:hover {
+    background-color: #66fcf1;
+    color: #0d1b24;
+  }
+  
+  @media (max-width: 768px) {
+    .settings-page {
+      padding: 10px;
+    }
+  
+    nav ul li {
+      margin-left: 10px;
+    }
+  }
+  
