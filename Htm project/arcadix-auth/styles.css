@@ -1,0 +1,952 @@
+/* General styles */
+/* Ensure main container takes the full height */
+
+main {
+  height: calc(100vh - 70px); /* Adjust based on header height */
+  overflow: hidden; /* Prevent main container from scrolling */
+  border: 2px solid #444;
+  margin-top: 50px;
+}
+
+.cta-button, 
+.submit-comment, 
+.cancel-comment {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Allow each panel to scroll independently */
+.side-panel, .center-panel {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.side-panel, .center-panel {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.side-panel::-webkit-scrollbar, .center-panel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.side-panel {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+.side-panel {
+  width: 20%;
+}
+
+.center-panel {
+  width: 60%;
+  padding: 20px;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  background-color: rgb(6, 20, 29, 255);
+  color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgb(6, 20, 29, 255);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.logo img{
+  height: 50px;
+}
+
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* ensure it's on top of other content */
+  background-color: rgba(0, 0, 0, 1);
+}
+
+
+
+.nav.scrolled {
+  background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.logo{
+  margin-top: 20px;
+}
+ul{
+  z-index: 1;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+li{
+  list-style-type: none;
+  font-size: 15px;
+
+}
+
+/* a:hover::after{
+  content: "";
+  height: 5px;
+  width: 40px;
+  background-color: #2f71ee;
+  display: block;
+  transform: skew(-50deg); 
+  transition: width 1s ease;
+} */
+
+/* Underline effect for hover */
+li a:hover::after {
+  content: "";
+  height: 5px;
+  width: 40px;
+  background-color: #2f71ee;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: skew(-50deg);
+  transition: width 0.3s ease;
+}
+
+/* Underline effect for active menu item */
+li.active a::after {
+  content: "";
+  height: 5px;
+  width: 40px;
+  background-color: #2f71ee;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: skew(-50deg);
+  transition: width 0.3s ease;
+}
+
+/* Ensure links are positioned correctly for underline */
+li a {
+  position: relative;
+  padding-bottom: 5px;
+  text-decoration: none;
+  color: #e8eaed; /* Default link color */
+}
+
+
+
+/* nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+ul li {
+  margin: 0 10px;
+}
+
+ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}*/
+
+ul li.profile {
+  display: flex;
+  align-items: center;
+}
+
+ul li .profile-pic {
+  border-radius: 50%;
+  height: 30px;
+  margin-right: 8px;
+} 
+
+.achieve-ul{
+
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: self-start;
+  gap: 20px;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  color: #45a29e;
+} 
+
+main {
+  display: flex;
+}
+
+.side-panel {
+  width: 20%;
+  padding: 1rem;
+}
+
+.side-panel.left {
+  border: 1px solid #444;
+}
+
+.side-panel.right {
+  border-left: 1px solid #444;
+}
+
+.center-panel {
+  width: 60%;
+  /* background: rgb(64,133,51);
+background: linear-gradient(90deg, rgba(64,133,51,0.65) 0%, rgba(45,45,45,1) 25%, rgba(45,47,45,1) 75%, rgba(64,133,51,0.65) 100%); */
+}
+
+.post-header{
+  display: flex;
+  flex-direction: row;
+  border-radius: 50%;
+  height: 40px;
+  margin-right: 10px;
+  
+}
+
+.post-profile-pic {
+  display: flex;
+  flex-direction: row;
+  border-radius: 50%;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;  
+  margin-top: 30px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.hero p {
+  margin-top: 0;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+.list {
+  margin-right: 38px;
+  display: flex;
+  gap: 0.25rem;
+  transform-style: preserve-3d;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+
+  &:hover :not(:hover) {
+    margin: 0 -20px;
+    transform: perspective(500px) rotateY(45deg) scale(0.95);
+  }
+
+  &:hover :not(:hover)::after {
+    opacity: 0.4;
+  }
+}
+
+.item {
+  position: relative;
+  width: 180px;
+  aspect-ratio: 3/4;
+  border-radius: 0.5rem;
+  background-size: cover;
+  background-position: center;
+  transition: margin 0.5s, transform 0.5s;
+
+  &:nth-of-type(1) { background-image: url(item_1.jpg); }
+  &:nth-of-type(2) { background-image: url(item_2.jpg);}
+  &:nth-of-type(3) { background-image: url(item_3.jpg);}
+  &:nth-of-type(4) { background-image: url(item_4.jpg);}
+  &:nth-of-type(5) { background-image: url(item_5.jpg); }
+
+  &:hover ~ .item {
+    transform: perspective(500px) rotateY(-45deg) scale(0.95);
+  }
+
+  &:hover {
+    transform: perspective(500px) rotateY(0) scale(1.2);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    aspect-ratio: inherit;
+    border-radius: inherit;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+}
+
+.list .item{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.current-page{
+  color: #121212;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #66fcf1;
+  color: #1c1c1c;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 800;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #45a29e;
+}
+
+.posts {
+  margin-bottom: 2rem;
+}
+
+.post {
+  background-color: rgba(27, 39, 48, 255);
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.post h3 {
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+}
+
+.post p {
+  margin: 0 0 1rem 0;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  overflow: hidden;
+}
+
+.slides img {
+  width: 700px;
+  height: 400px;
+  object-fit: cover;
+  display: flexbox;
+  margin: 0 auto;
+}
+
+
+button.prev, button.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  transition: 0.6s ease;
+  border-radius: 3px;
+  user-select: none;
+  background-color: rgba(0,0,0,0.5);
+  display: none; /* Hide buttons by default */
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+button.prev:hover, button.next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Show buttons on post hover */
+.post:hover button.prev, .post:hover button.next {
+  display: block;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.post-actions i {
+  cursor: pointer;
+  transition: color 0.3s;
+  font-size: 1.5rem;
+}
+
+.like-icon.liked, .comment-icon.commenting {
+  color: #66fcf1;
+}
+
+.badge-section, .most-played-game, .highest-score, .achievements, .game-progress, .recent-chats {
+  margin-bottom: 1rem;
+}
+
+.most-played-game, .highest-score, .achievements, .game-progress{
+  margin-bottom: 1rem;
+  background-color:rgba(27, 39, 48, 255);
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+  width: 100%;
+  background-color: #444;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar .progress {
+  height: 20px;
+  background-color: #66fcf1;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
+
+
+.recent-chats{
+  background-color: rgba(27, 39, 48, 255);
+  padding: 0.5rem;
+  border-radius: 5px;
+height: 600px;
+}
+
+.badge {
+  display: block;
+  margin: 1rem auto;
+  max-width: 50%;
+}
+
+.badge-section{
+  filter: drop-shadow(2px 2px 2px rgb(61, 82, 88) 2px 2px 10px white);
+}
+
+.search-bar input {
+  width: 94%;
+  padding: 0.5rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #2c2c2c;
+  color: #f4f4f4;
+}
+
+.friend-profile-pic {
+  border-radius: 50%;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.recent-chats ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recent-chats ul li {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+}
+
+.recent-chats ul li:last-child {
+  border-bottom: none;
+}
+
+.recent-chats ul li a {
+  color: #f4f4f4;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.recent-chats ul li a:hover {
+  color: #45a29e;
+}
+
+/* Comment box styles */
+.comment-box {
+  border-radius: 10px;
+  display: none;
+  align-items: center;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background-color: rgb(6, 20, 29, 255);
+  padding: 1rem;
+  border-top: 2px solid #444;
+  transition: bottom 0.5s ease-in-out;
+  z-index: 1000;
+  max-height: 70%;
+
+}
+
+.comment-box.active {
+  bottom: 0;
+}
+
+.comment-box textarea {
+  
+  width: 90%;
+  height: 50px;
+  padding: 0.5rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #2c2c2c;
+  color: #f4f4f4;
+  margin-bottom: 0.5rem;
+}
+
+.comment-box button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-post-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #262626;
+  color: #f2f2f2;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  border: 2px solid #333;
+}
+
+.add-post-button:hover {
+  background-color: #333;
+}
+
+
+.submit-comment {
+  background-color: #66fcf1;
+  color: #1c1c1c;
+}
+
+.submit-comment:hover {
+  background-color: #45a29e;
+}
+
+.cancel-comment {
+  background-color: #444;
+  color: #f4f4f4;
+  margin-left: 0.5rem;
+}
+
+.cancel-comment:hover {
+  background-color: #333;
+}
+
+/* Comments display section */
+.comments-display {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 0.5rem;
+}
+
+.share-options {
+  
+  margin-top: 10px;
+}
+
+.share-options a {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-right: 5px;
+  background-color: #3b5998; /* Default Facebook color */
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.share-options a.share-twitter {
+  background-color: #1da1f2; /* Twitter color */
+}
+
+.share-options a.share-linkedin {
+  background-color: #0077b5; /* LinkedIn color */
+}
+
+
+
+/* Cleaner left side panel */
+.side-panel.left {
+  border-right: 1px solid #444;
+  padding: 1rem 0;
+}
+
+.side-panel.left .badge-section {
+  text-align: center;
+}
+
+.side-panel.left .badge-section img .most-played-game .highest-score {
+  width: 80%;
+  border-radius: 50%;
+}
+
+.side-panel.left .section-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #66fcf1;
+}
+
+.side-panel.left .section-content {
+  margin-bottom: 1rem;
+}
+
+.side-panel.left .section-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-panel.left .section-content ul li {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #444;
+}
+
+.side-panel.left .section-content ul li:last-child {
+  border-bottom: none;
+}
+
+.side-panel.left .section-content ul li a {
+  color: #f4f4f4;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.side-panel.left .section-content ul li a:hover {
+  color: #45a29e;
+}
+       
+/* Modal container */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Black with opacity */
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #1b2730; /* Matches the site’s dark theme */
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 40%;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.close:hover, .close:focus {
+  color: #f4f4f4;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Chat header (friend's name) */
+.chat-header {
+  background-color: #0b1a22; /* Dark background for header */
+  color: #66fcf1; /* Accent color */
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Chat box */
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #162229; /* Matches overall dark theme */
+  border-radius: 0 0 8px 8px;
+  padding: 20px;
+  gap: 10px;
+  height: 400px;
+  overflow-y: auto;
+}
+
+/* Chat message styling */
+.chat-message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  max-width: 70%;
+  font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.chat-message.sent {
+  background-color: #66fcf1; /* Accent color for sent messages */
+  color: #1b2730; /* Dark text */
+  align-self: flex-end;
+}
+
+.chat-message.received {
+  background-color: #f4f4f4; /* Light background for received */
+  color: #1b2730; /* Dark text */
+  align-self: flex-start;
+}
+
+/* Chat input box */
+#chatInput {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #2c2c2c;
+  color: #f4f4f4;
+  border: none;
+  font-size: 14px;
+}
+
+#chatInput::placeholder {
+  color: #888;
+}
+
+/* Send button */
+#sendMessage {
+  padding: 12px 20px;
+  background-color: #66fcf1;
+  border: none;
+  border-radius: 8px;
+  color: #1b2730;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#sendMessage:hover {
+  background-color: #45a29e;
+}
+
+/* Form Styles */
+form {
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Stack elements vertically */
+}
+
+/* Label Styles */
+label {
+  margin-top: 1rem; /* Space above labels */
+  color: #66fcf1; /* Accent color */
+}
+
+/* Input and Textarea Styles */
+input[type="file"], input[type="text"], textarea {
+  padding: 0.5rem; /* Padding */
+  margin-top: 0.5rem; /* Space above inputs */
+  border: 1px solid #444; /* Border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #2c2c2c; /* Dark background */
+  color: #f4f4f4; /* Light text */
+}
+
+/* Textarea Specific Styles */
+textarea {
+  height: 100px; /* Height for textarea */
+  resize: none; /* Disable resizing */
+}
+
+/* Submit Button Styles */
+button[type="submit"] {
+  margin-top: 1rem; /* Space above button */
+  padding: 0.5rem 1rem; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #66fcf1; /* Accent color */
+  color: #1c1c1c; /* Dark text */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+button[type="submit"]:hover {
+  background-color: #45a29e; /* Darker shade on hover */
+}
+
+.comment-box {
+  transition: bottom 0.5s ease-in-out;
+}
+
+.item {
+  transition: margin 0.5s ease, transform 0.5s ease;
+}
+
+/* Add transitions for chat messages */
+.chat-message {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Styles */
+
+body.dark-mode {
+  background-color: rgba(255, 222, 173, 1); /* Change to wheat */
+  color: white; /* Change text color to white */
+}
+
+body.dark-mode header {
+  background-color: wheat; /* Change header color */
+}
+
+body.dark-mode .post {
+  background-color: rgba(255, 255, 255, 1); /* Change post background to white */
+}
+
+body.dark-mode .sidebar, 
+body.dark-mode .comment-box {
+  background-color: rgba(255, 222, 173, 1); /* Change side panels to wheat */
+}
+
+/* Adjust button colors in dark mode */
+body.dark-mode .cta-button, 
+body.dark-mode .submit-comment, 
+body.dark-mode .cancel-comment {
+  background-color: #45a29e; /* Change button color in dark mode */
+  color: #1c1c1c; /* Button text color */
+}
+
+
+/* Adjust other components as needed for dark mode */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to elements you want to fade in */
+.fade-in {
+  animation: fadeIn 0.5s ease-in forwards; /* Make sure to use forwards to retain the end state */
+}
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 80vh;
+  width: 230px;
+  z-index: 999;
+  padding: 20px;
+  background-color:rgb(6,20,29,0.7);box-shadow: -10px 0 10px rgba(0, 0, 0,0.1);
+  backdrop-filter: blur(10px);
+  display: flex;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sidebar li{
+  width: 100%;
+}
+.sidebar a{
+  width: 100%;
+}
+
+.menu-button{
+  display: none;
+}
+
+

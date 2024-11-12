@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARCADIX</title>
+  <link rel="stylesheet" href="styles.css">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="website icon" type="png" href="ARCADIX-removebg-preview.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="main.html" style="color: #66fcf1;">Home</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="settings.html5">Settings</a></li>
+        <li class="profile">
+          <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+          <a href="profile.html">My Profile</a>
+        </li>
+      </ul>
+      <button id="darkModeToggle">Toggle Dark Mode</button>
+    </nav>
+  </header> -->
+
+  <div class="nav">
+    <div class="logo"><img src="logo.png" alt=""></div>
+    <div class="navbar">
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="26px"
+                fill="#e8eaed">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </li><li id="Home"class="active"><a href="#">Home</a></li>
+        <li><a href="#about1">About</a></li>
+        <li><a href="#discounts">Deals</a></li>
+        <li><a href="#countdown">Upcoming</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="active" href="#">Social</a></li>
+        <li class="profile">
+          <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+          <a href="profile.html">My Profile</a>
+        </li>
+    </ul>
+    <ul>
+        <li id="Home" class="hideOnMobile"><a href="../ok/index.html">Home</a></li>
+        <li class="hideOnMobile"><a href="../ok/index.html">About</a></li>
+        <li class="hideOnMobile"><a href="../ok/index.html">Deals</a></li>
+        <li class="hideOnMobile"><a href="../ok/index.html">News</a></li>
+        <li class="hideOnMobile"><a href="../ok/index.html">Contact</a></li>
+        <li class="hideOnMobile"><a href="../newlogin/index.html">Login</a></li>
+        <li class="hideOnMobile active" ><a href="../arcadix-auth/main.html">Social</a></li>
+        <li class="profile">
+          <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+          <a href="profile.html">My Profile</a>
+        </li>
+        <li class="menu-button" onclick="showSidebar()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#e8eaed">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+            </svg>
+        </li>
+    </ul>
+</div>
+</div>
+  <main class="main-page">
+    <div class="side-panel left">
+      <div class="game-progress">
+        <h3 class="section-title">Game Progress</h3>
+        <div class="section-content">
+          <p>Level: 10</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 60%;"></div>
+          </div>
+          <p>XP: 5000/10000</p>
+        </div>
+      </div>
+      <div class="Progress">
+        <div class="most-played-game">
+          <h3 class="section-title">Most Played Game</h3>
+          <div class="section-content">
+            <p>Game Name: XYZ</p>
+            <p>Hours Played: 100</p>
+          </div>
+        </div>
+        <div class="highest-score">
+          <h3 class="section-title">Highest Score</h3>
+          <div class="section-content">
+            <p>Game Name: ABC</p>
+            <p>Score: 2000</p>
+          </div>
+        </div>
+        <div class="achievements">
+          <h3 class="section-title">Achievements</h3>
+          <div class="section-content">
+            <ol class="achieve-ul">
+              <li><a href="#">Achievement 1</a></li>
+              <li><a href="#">Achievement 2</a></li>
+              <li><a href="#">Achievement 3</a></li>
+            </ol>
+          </div>
+        </div>
+        <div class="game-progress">
+          <h3 class="section-title">Game Progress</h3>
+          <div class="section-content">
+            <p>Level: 10</p>
+            <p>XP: 5000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="center-panel">
+      <div class="hero">
+        <h1 style="color: #66fcf1;">Welcome to the Social Media Mockup</h1>
+        <p>Connect with your friends and share your gaming experiences!</p>
+        <ul class='list'>
+          <li class='item'></li> <!-- Home page icon with highlight -->
+          <li class='item'></li>
+          <li class='item'></li>
+          <li class='item'></li>
+          <li class='item'></li>
+        </ul>        
+      </div>
+      <div class="posts">
+        <!-- Post -->
+        <div class="post" data-post-id="1">
+          <div class="post-header">
+            <img src="friend2-profile-pic.jpg" alt="Profile Picture" class="post-profile-pic">
+            <h3>Divyam Jain</h3>
+          </div>
+          
+          <div class="slider">
+            <p>This is a sample post from user 1. Loving the new game!</p>
+            <div class="slides">
+              <img data-src="Marvels-Spider-Man-2.jpeg" alt="Image 1" class="lazy">
+              <img data-src="Marvels-Spider-Man-2-.jpeg" alt="Image 2" class="lazy">
+            </div>
+            <button class="prev" onclick="moveSlide(this, -1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(this, 1)">&#10095;</button>
+          </div>
+          <div class="post-actions">
+            <i class="fa-solid fa-heart" onclick="toggleLike(this)"></i>
+            <i class="fas fa-comment comment-icon" onclick="toggleCommentBox(1)"></i>
+            <i class="fas fa-share share-button"></i>
+
+            <div class="share-options" style="display: none;">
+              <a href="#" class="share-facebook">Facebook</a>
+              <a href="#" class="share-twitter">Twitter</a>
+              <a href="#" class="share-linkedin">LinkedIn</a>
+            </div>
+
+            <div class="comment-box" id="comment-box">
+              <div class="comments-display">
+                <!-- Comments will be dynamically added here -->
+              </div>
+              <textarea placeholder="Write a comment..."></textarea>
+              <button class="submit-comment">Submit</button>
+              <button class="cancel-comment" onclick="toggleCommentBox()">Cancel</button>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="post" data-post-id="2">
+          <div class="post-header">
+            <img src="friend1-profile-pic.jpg" alt="Profile Picture" class="post-profile-pic">
+            <h3>Ishit Singh</h3>
+          </div>
+          
+          <div class="slider">
+            <p>This is a sample post from user 2. Can't wait for the next tournament!</p>
+            <div class="slides">
+              <img src="game2.png" alt="Image 1">
+              <img src="ea-sports.jpg" alt="Image 2">
+            </div>
+            <button class="prev" onclick="moveSlide(this, -1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(this, 1)">&#10095;</button>
+          </div>
+          <div class="post-actions">
+            <i class="fas fa-heart like-icon" onclick="toggleLike(this)"></i>
+            <i class="fas fa-comment comment-icon" onclick="toggleCommentBox(2)"></i>
+            <i class="fas fa-share share-button"></i>
+
+            <div class="share-options" style="display: none;">
+              <a href="#" class="share-facebook">Facebook</a>
+              <a href="#" class="share-twitter">Twitter</a>
+              <a href="#" class="share-linkedin">LinkedIn</a>
+            </div>
+
+            <div class="comment-box" id="comment-box">
+              <div class="comments-display">
+                <!-- Comments will be dynamically added here -->
+              </div>
+              <textarea placeholder="Write a comment..."></textarea>
+              <button class="submit-comment">Submit</button>
+              <button class="cancel-comment" onclick="toggleCommentBox()">Cancel</button>
+            </div>
+            
+          </div>
+
+        </div>
+        <div class="post" data-post-id="3">
+          <div class="post-header">
+            <img src="friend3-profile-pic.jpg" alt="Profile Picture" class="post-profile-pic">
+            <h3>Kashish</h3>
+          </div>
+          
+          <div class="slider">
+            <p>This is a sample post from user 3. Just hit a new high score!</p>
+            <div class="slides">
+              <img src="ALU.png" alt="Image 1">
+              <img src="asl2.webp" alt="Image 2">
+            </div>
+            <button class="prev" onclick="moveSlide(this, -1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(this, 1)">&#10095;</button>
+          </div>
+          <div class="post-actions">
+            <i class="fas fa-heart like-icon" onclick="toggleLike(this)"></i> 
+            <i class="fas fa-comment comment-icon" onclick="toggleCommentBox(3)"></i>
+            <i class="fas fa-share share-button"></i>
+
+            <div class="share-options" style="display: none;">
+              <a href="#" class="share-facebook">Facebook</a>
+              <a href="#" class="share-twitter">Twitter</a>
+              <a href="#" class="share-linkedin">LinkedIn</a>
+            </div>
+
+            <div class="comment-box" id="comment-box">
+              <div class="comments-display">
+                <!-- Comments will be dynamically added here -->
+              </div>
+              <textarea placeholder="Write a comment..."></textarea>
+              <button class="submit-comment">Submit</button>
+              <button class="cancel-comment" onclick="toggleCommentBox()">Cancel</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="side-panel right">
+      <div class="search-bar">
+        <input type="text" placeholder="Search...">
+      </div>
+      <div class="recent-chats">
+        <h3 style="color: #66fcf1;">Recent Chats</h3>
+        <ul class="achieve-ul">
+          <li>
+            <img src="friend1-profile-pic.jpg" alt="Friend 1" class="friend-profile-pic">
+            <a class="#a" href="#">Ishit Singh</a>
+          </li>
+          <li>
+            <img src="friend2-profile-pic.jpg" alt="Friend 2" class="friend-profile-pic">
+            <a href="#">Divyam Jain</a>
+          </li>
+          <li>
+            <img src="friend3-profile-pic.jpg" alt="Friend 3" class="friend-profile-pic">
+            <a href="#">Kashish</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- Chat Modal -->
+<div id="chatModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="chat-header" id="friendName">Chat with Friend</div> <!-- Chat header -->
+    <div id="chatMessages" class="chat-box"></div> <!-- Chat messages -->
+    <textarea id="chatInput" placeholder="Type your message..."></textarea>
+    <button id="sendMessage">Send</button>
+  </div>
+</div>
+
+
+  <div class="add-post-button " onclick="openPostModal()">
+    <i class="" style="font-size: 35PX;">&#43;</i>
+  </div>
+
+  <!-- Add Post Modal -->
+<div id="postModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closePostModal()">&times;</span>
+    <h2>Add a New Post</h2>
+    <form id="postForm">
+      <label for="imageUpload">Upload Image:</label>
+      <input type="file" id="imageUpload" accept="image/*" required>
+
+      <label for="caption">Caption:</label>
+      <textarea id="caption" placeholder="Write your caption..." required></textarea>
+
+      <label for="tags">Tags (comma-separated):</label>
+      <input type="text" id="tags" placeholder="Add tags...">
+
+      <button type="submit">Post</button>
+    </form>
+  </div>
+</div>
+
+<div class="add-post-button" onclick="openPostModal()">
+  <i class="" style="font-size: 35px;">&#43;</i>
+</div>
+
+
+  <script>
+    let currentSlideIndex = {};
+  
+    function moveSlide(button, n) {
+      const slider = button.parentElement;
+      const slides = slider.querySelector('.slides').children;
+      const postId = slider.closest('.post').dataset.postId;
+  
+      if (!currentSlideIndex[postId]) {
+        currentSlideIndex[postId] = 0;
+      }
+  
+      currentSlideIndex[postId] += n;
+  
+      if (currentSlideIndex[postId] >= slides.length) {
+        currentSlideIndex[postId] = 0;
+      }
+      if (currentSlideIndex[postId] < 0) {
+        currentSlideIndex[postId] = slides.length - 1;
+      }
+  
+      for (let slide of slides) {
+        slide.style.display = 'none';
+      }
+      slides[currentSlideIndex[postId]].style.display = 'block';
+    }
+  
+    function toggleLike(icon) {
+      icon.classList.toggle('liked');
+    }
+  
+    function toggleCommentBox(postId) {
+      const post = document.querySelector(`.post[data-post-id="${postId}"]`);
+      const commentBox = post.querySelector('.comment-box');
+      commentBox.style.display = commentBox.style.display === 'block' ? 'none' : 'block';
+  
+      if (postId) {
+        const commentsDisplay = commentBox.querySelector('.comments-display');
+        commentsDisplay.innerHTML = ''; // Clear previous comments
+  
+        // Fetch and display comments for the post
+        // This is a mock, replace it with actual fetching logic
+        const mockComments = [
+          'Great post!',
+          'I totally agree!',
+          'Awesome!'
+        ];
+        mockComments.forEach(comment => {
+          const commentElement = document.createElement('p');
+          commentElement.textContent = comment;
+          commentsDisplay.appendChild(commentElement);
+        });
+      }
+    }
+  
+    function openPostModal() {
+      // Logic to open the post creation modal
+      alert("Post creation modal opened!");
+    }
+  
+    // Lazy Loading Script
+    document.addEventListener("DOMContentLoaded", function() {
+      let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+  
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImage.classList.remove("lazy");
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+  
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      } else {
+        // Fallback for browsers without IntersectionObserver support
+        // Load all images immediately
+        lazyImages.forEach(function(lazyImage) {
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.classList.remove("lazy");
+        });
+      }
+    });
+  
+    // Share Button Functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.share-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const postContainer = this.closest('.post');
+          const postId = postContainer.dataset.postId;
+          const postContent = postContainer.querySelector('.slider p').innerText;
+          const urlToShare = window.location.href;
+  
+          const shareOptions = this.nextElementSibling;
+          shareOptions.style.display = shareOptions.style.display === 'none' ? 'block' : 'none';
+  
+          shareOptions.querySelector('.share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlToShare)}`;
+          shareOptions.querySelector('.share-twitter').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(urlToShare)}&text=${encodeURIComponent(postContent)}`;
+          shareOptions.querySelector('.share-linkedin').href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(urlToShare)}&title=${encodeURIComponent(postContent)}`;
+        });
+      });
+  
+      // Add cancel button functionality to comment boxes
+      document.querySelectorAll('.cancel-comment').forEach(button => {
+        button.addEventListener('click', function() {
+          const commentBox = button.closest('.comment-box');
+          commentBox.style.display = 'none';
+        });
+      });
+    });
+  
+    // Get modal elements
+    const modal = document.getElementById("chatModal");
+    const closeModal = document.querySelector(".close");
+    const chatMessages = document.getElementById("chatMessages");
+    const chatInput = document.getElementById("chatInput");
+    const sendMessageButton = document.getElementById("sendMessage");
+    let activeFriend = '';
+  
+    // Function to open chat modal
+    function openChatModal(friendName) {
+      document.getElementById('friendName').textContent = `Chat with ${friendName}`;
+      activeFriend = friendName;
+      modal.style.display = "block";
+    }
+  
+    // Close modal on clicking "x"
+    closeModal.onclick = function() {
+      modal.style.display = "none";
+    }
+  
+    // Close modal if user clicks outside modal
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  
+    // Send message functionality
+    sendMessageButton.onclick = function() {
+      const message = chatInput.value.trim();
+      if (message) {
+        const messageElement = document.createElement('div');
+        messageElement.textContent = `You: ${message}`;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the latest message
+        chatInput.value = ''; // Clear the input after sending
+      }
+    }
+  
+    // Attach event listeners to friends in recent chats
+    document.querySelectorAll('.recent-chats a').forEach(friend => {
+      friend.addEventListener('click', function(event) {
+        event.preventDefault();
+        const friendName = this.textContent;
+        openChatModal(friendName);
+      });
+    });
+
+    function openPostModal() {
+  document.getElementById("postModal").style.display = "block";
+}
+
+function closePostModal() {
+  document.getElementById("postModal").style.display = "none";
+}
+
+// Handle form submission
+document.getElementById("postForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+
+  // You can add your logic to handle the post creation here
+  const imageFile = document.getElementById("imageUpload").files[0];
+  const caption = document.getElementById("caption").value;
+  const tags = document.getElementById("tags").value;
+
+  // For demonstration, just logging the data
+  console.log("Image File:", imageFile);
+  console.log("Caption:", caption);
+  console.log("Tags:", tags);
+
+  // Close the modal after posting
+  closePostModal();
+  
+  // Clear the form fields
+  document.getElementById("postForm").reset();
+});
+
+// Select the toggle button
+const toggleButton = document.getElementById('darkModeToggle');
+
+// Listen for click events on the button
+toggleButton.addEventListener('click', () => {
+  // Toggle the 'dark-mode' class on the body
+  document.body.classList.toggle('dark-mode');
+});
+
+// Function to handle adding fade-in class
+const fadeInElements = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+      observer.unobserve(entry.target); // Stop observing after fade-in
+    }
+  });
+});
+
+// Observe each element that should fade in
+fadeInElements.forEach(element => {
+  observer.observe(element);
+});
+
+
+  </script>
+  
+
+</body>
+</html>         

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Teller</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #message {
+            display: none;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="actionButton" onclick="showFortune()">Click for Your Fortune!</button>
+    <div id="message"></div>
+
+    <script>
+        // Array of 200 fortune lines
+        const fortunes = [
+            "you will die soon",
+            "Good things are coming your way.",
+            "You will find success in unexpected places.",
+            "Happiness is just around the corner.",
+            "A dream you have will come true.",
+            "You will be surrounded by positivity.",
+            "Adventure is on the horizon for you.",
+            "Expect a surprise visitor soon.",
+            "An exciting opportunity awaits you.",
+            "You will make a valuable connection soon.",
+            "A financial gain is in your near future.",
+            "Someone special will enter your life soon.",
+            "Your talents will soon be recognized.",
+            "Your hard work will soon pay off.",
+            "You are about to receive a pleasant surprise.",
+            "A new friendship will enrich your life.",
+            "Your optimism will bring you good fortune.",
+            "An old friend will come back into your life.",
+            "Success will be yours if you stay determined.",
+            "You will overcome obstacles with ease.",
+            "An unexpected gift is coming your way.",
+            "You will soon embark on a great adventure.",
+            "Trust yourself, and success will follow.",
+            "New ideas will bring you success.",
+            "You will find joy in the little things.",
+            "You will soon receive great news.",
+            "Your kindness will lead to unexpected rewards.",
+            "A great change is coming in your career.",
+            "Luck will be on your side this week.",
+            "You are about to achieve a major goal.",
+            "Your creativity will shine brightly soon.",
+            "Someone close to you has wonderful news.",
+            "A happy surprise will brighten your day.",
+            "You will soon find clarity in a confusing situation.",
+            "Expect a promotion or raise at work.",
+            "A long-awaited wish will soon come true.",
+            "You are about to make a big impact.",
+            "Good health and happiness are in your future.",
+            "A new hobby will bring you unexpected joy.",
+            "Your efforts will lead to great success.",
+            "You are about to enter a period of prosperity.",
+            "Love is in the air for you.",
+            "Your patience will soon be rewarded.",
+            "You will soon discover hidden talents.",
+            "An exciting new project is coming your way.",
+            "You will find joy in helping others.",
+            "A small risk will lead to big rewards.",
+            "An opportunity to travel is in your future.",
+            "You will make a significant positive change soon.",
+            "You will achieve balance and harmony in life.",
+            "A fresh start is coming your way.",
+            "Your compassion will open new doors.",
+            "You are about to enter a time of personal growth.",
+            "New opportunities will come from old connections.",
+            "An unexpected windfall is in your near future.",
+            "You will soon have reasons to celebrate.",
+            "You will soon meet someone who will change your life.",
+            "Your efforts will bring you joy and success.",
+            "You will find happiness in a new friendship.",
+            "A surprise invitation will bring you joy.",
+            "The stars are aligned in your favor.",
+            "A positive change is coming to your home life.",
+            "You are about to experience a breakthrough.",
+            "A new adventure is about to begin.",
+            "Your future is filled with love and light.",
+            "Something wonderful is on its way to you.",
+            "You will soon be surrounded by good fortune.",
+            "A hidden opportunity will reveal itself soon.",
+            "A positive turn of events is in your future.",
+            "You will soon make a valuable discovery.",
+            "You will be rewarded for your generosity.",
+            "Your wisdom will lead you to great success.",
+            "A positive mindset will attract abundance.",
+            "You will soon experience peace and happiness.",
+            "A pleasant surprise is on its way to you.",
+            "A creative solution will solve a long-standing issue.",
+            "Your persistence will bring you success.",
+            "You are destined for greatness.",
+            "A joyful event will lift your spirits soon.",
+            "You will find the strength to overcome challenges.",
+            "A new beginning is coming your way.",
+            "Your dreams are about to come true.",
+            "A close friend will bring you good news.",
+            "You will soon be presented with a life-changing opportunity.",
+            "Your positive attitude will lead to a great outcome.",
+            "An unexpected event will bring you happiness.",
+            "A small effort will lead to great rewards.",
+            "Your future holds many blessings.",
+            "You will soon receive praise for your hard work.",
+            "A new relationship will bring you great joy.",
+            "You will achieve your goals faster than you expect.",
+            "You are about to enter a time of happiness and success.",
+            "An exciting new chapter is about to begin for you.",
+            "You will soon overcome a challenge that has been holding you back.",
+            "Good fortune will find you in the next few days.",
+            "A close family member has great news for you.",
+            "You are about to make a life-changing decision.",
+            "Your unique talents will bring you success.",
+            "You will find the answers you've been seeking.",
+            "A new opportunity will come when you least expect it.",
+            "You will soon be recognized for your achievements.",
+            "A chance meeting will lead to a valuable friendship.",
+            "You will find happiness in the things you love.",
+            "You will soon experience a positive change in your career.",
+            "The universe is guiding you toward success.",
+            "A new opportunity is coming that will change your life.",
+            "Your determination will bring you great rewards.",
+            "You will soon find peace in a difficult situation.",
+            "A new journey is about to begin for you.",
+            "Your kindness will bring unexpected blessings.",
+            "An unexpected opportunity will bring you great joy.",
+            "You will soon be surrounded by love and happiness.",
+            "Your generosity will lead to great rewards.",
+            "A small act of kindness will bring you great joy.",
+            "You will soon experience a financial windfall.",
+            "You are about to achieve something extraordinary.",
+            "An exciting new friendship is on the horizon.",
+            "You will soon find peace and balance in your life.",
+            "Your efforts will soon be rewarded in a big way.",
+            "You are on the right path to success.",
+            "You will soon have a reason to celebrate.",
+            "A new opportunity will lead to a big breakthrough.",
+            "You will soon discover a new passion.",
+            "Your intuition will guide you to success.",
+            "You are about to make a big difference in someone's life.",
+            "An unexpected event will lead to positive change.",
+            "You will soon have a chance to share your talents with the world.",
+            "Your future is bright and full of promise.",
+            "You will find success in something you've been working on.",
+            "An exciting opportunity will soon present itself.",
+            "You will soon receive a message that will change your life.",
+            "The next few days will bring joy and laughter.",
+            "You are about to experience a major breakthrough.",
+            "A close friend will bring you unexpected good news.",
+            "You are destined for happiness and success.",
+            "A new opportunity is about to unfold for you.",
+            "You will soon be rewarded for your hard work and determination.",
+            "Your perseverance will bring you great success.",
+            "You will find love and happiness in unexpected places.",
+            "You are about to embark on a journey of self-discovery.",
+            "A new opportunity will bring you great success.",
+            "Your creativity will lead you to new opportunities.",
+            "You are about to experience a period of growth and happiness.",
+            "You will soon find clarity in a confusing situation.",
+            "You are about to make a decision that will change your life.",
+            "Good fortune will find you when you least expect it.",
+            "A new chapter in your life is about to begin.",
+            "You will soon discover the strength to overcome any obstacle.",
+            "A surprise encounter will bring you great joy.",
+            "You are about to receive a message of good news.",
+            "Your hard work will soon be rewarded with success.",
+            "You are about to experience a time of great abundance.",
+            "A new opportunity will bring you great happiness.",
+            "You will soon find the courage to pursue your dreams.",
+            "A positive mindset will bring you great success.",
+            "You will soon be presented with a life-changing opportunity.",
+            "Your future is filled with exciting possibilities.",
+            "You will find joy in the little things in life.",
+            "A new opportunity will come when you least expect it.",
+            "You will soon experience a positive change in your personal life.",
+            "A small effort will lead to great success.",
+            "You are about to make a valuable discovery.",
+            "You will soon find happiness in unexpected places."
+        ];
+
+        // Function to show random fortune and hide button
+        function showFortune() {
+            // Hide the button
+            document.getElementById("actionButton").style.display = "none";
+            
+            // Generate a random fortune from the array
+            const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+            
+            // Display the random fortune in the message div
+            document.getElementById("message").innerHTML = randomFortune;
+            document.getElementById("message").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

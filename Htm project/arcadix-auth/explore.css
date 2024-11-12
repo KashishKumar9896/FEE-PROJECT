@@ -1,0 +1,142 @@
+body {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  background-color: rgb(6, 20, 29, 255);
+  color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgb(6, 20, 29, 255);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img{
+  height: 50px;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li.profile {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li .profile-pic {
+  border-radius: 50%;
+  height: 30px;
+  margin-right: 8px;
+}
+
+nav ul li a:hover {
+  color: #45a29e;
+}
+
+.explore-page {
+  padding: 20px;
+}
+
+.explore-page section {
+  margin-bottom: 2rem;
+}
+
+.explore-page h2 {
+  border-bottom: 2px solid #66fcf1;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.game-card, .player-card, .event-card, .review-card, .content-card, .developer-card, .challenge-card {
+  background-color: #0d1b24;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-card img, .player-card img {
+  height: 120px;
+  border-radius: 5px;
+  margin-right: 1rem;
+  background-size: cover;
+}
+
+.game-card h3, .player-card h3, .event-card h3, .review-card h3, .content-card h3, .developer-card h3, .challenge-card h3 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-list a {
+  background-color: #0d1b24;
+  color: #f4f4f4;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.category-list a:hover {
+  background-color: #45a29e;
+  color: #06141d;
+}
+
+.play-link {
+  background-color: #66fcf1;
+  color: #06141d;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.play-link:hover {
+  background-color: #45a29e;
+}
+
+@media (max-width: 768px) {
+  .game-card, .player-card, .event-card, .review-card, .content-card, .developer-card, .challenge-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .game-card img, .player-card img {
+    margin-bottom: 1rem;
+  }
+}

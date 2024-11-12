@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcadix - Rise of the Gamers</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- FontAwesome for icons -->
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><img src="Preview-removebg-preview.png" alt="logo"></div>
+      <ul class="nav-links main-nav">
+        <li><a href="#">Games</a></li>
+        <li><a href="#">My Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="side-panel left">
+      <div class="badge-section">
+        <h2>My Badge</h2>
+        <img src="ARCADIX_DIAMOND-Photoroom-removebg-preview.png" alt="Current Badge" class="badge">
+      </div>
+      <div class="most-played-game">
+        <h2>Most Played Game</h2>
+        <p>Game Title</p>
+      </div>
+      <div class="highest-score">
+        <h2>Highest Score</h2>
+        <p>123456</p>
+      </div>
+      <div class="achievements">
+        <h2>Achievements</h2>
+        <ul>
+          <li>Achievement 1</li>
+          <li>Achievement 2</li>
+          <li>Achievement 3</li>
+        </ul>
+      </div>
+      <div class="game-progress">
+        <h2>Game Progress</h2>
+        <p>Level: 10</p>
+        <p>Completion: 75%</p>
+      </div>
+    </div>
+    <div class="center-panel">
+      <section class="hero">
+        <h1>Welcome to Arcadix</h1>
+        <p>The ultimate social platform for gamers</p>
+        <button class="cta-button">Join Now</button>
+      </section>
+      <section class="posts">
+        <h2>Latest Posts</h2>
+        <div class="post">
+          <h3>Username1</h3>
+          <p>This is a sample post from user 1. Enjoying the new game!</p>
+          <div class="slider">
+            <div class="slides">
+              <img src="Marvels-Spider-Man-2.jpeg" alt="Image 1">
+              <img src="Marvels-Spider-Man-2-.jpeg" alt="Image 2">
+            </div>
+            <button class="prev" onclick="moveSlide(this, -1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(this, 1)">&#10095;</button>
+          </div>
+          <div class="post-actions">
+            <i class="fas fa-heart like-icon" onclick="toggleLike(this)"></i>
+            <i class="fas fa-comment" onclick="toggleCommentBox(this)"></i>
+            <i class="fas fa-share"></i>
+          </div>
+          <div class="comment-box">
+            <div class="comments-display">
+              <div class="comment">This is a comment.</div>
+              <div class="comment">This is another comment.</div>
+            </div>
+            <textarea placeholder="Write a comment..."></textarea>
+            <button class="submit-comment">Submit</button>
+            <button class="cancel-comment" onclick="toggleCommentBox(this)">Cancel</button>
+          </div>
+        </div>
+        <!-- Repeat similar blocks for other posts -->
+      </section>
+    </div>
+    <div class="side-panel right">
+      <div class="search-bar">
+        <input type="text" placeholder="Search for friends to chat...">
+      </div>
+      <div class="recent-chats">
+        <h2>Recent Chats</h2>
+        <ul>
+          <li><a href="#">Friend 1</a></li>
+          <li><a href="#">Friend 2</a></li>
+          <li><a href="#">Friend 3</a></li>
+          <li><a href="#">Friend 4</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="post-container" data-post-id="1">
+      <div class="post-content">
+        <!-- Post Text/Image -->
+      </div>
+      <button class="share-button">Share</button>
+      <div class="share-options" style="display: none;">
+        <a href="#" class="share-facebook" target="_blank">Facebook</a>
+        <a href="#" class="share-twitter" target="_blank">Twitter</a>
+        <a href="#" class="share-linkedin" target="_blank">LinkedIn</a>
+      </div>
+      <div class="comments-section">
+        <!-- Comments Section -->
+      </div>
+    </div>
+    
+  </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.share-button').forEach(button => {
+    button.addEventListener('click', function() {
+      const postContainer = this.closest('.post-container');
+      const postId = postContainer.dataset.postId;
+      const postContent = postContainer.querySelector('.post-content').innerText;
+      const urlToShare = window.location.href;
+
+      const shareOptions = this.nextElementSibling;
+      shareOptions.style.display = shareOptions.style.display === 'none' ? 'block' : 'none';
+
+      shareOptions.querySelector('.share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlToShare)}`;
+      shareOptions.querySelector('.share-twitter').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(urlToShare)}&text=${encodeURIComponent(postContent)}`;
+      shareOptions.querySelector('.share-linkedin').href = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(urlToShare)}&title=${encodeURIComponent(postContent)}`;
+    });
+  });
+});
+
+  </script>
+</body>
+</html>
